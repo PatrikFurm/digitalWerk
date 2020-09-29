@@ -1,0 +1,20 @@
+.btn {
+  border: none;
+  transition-duration: .3s;
+  &.btn-yellow {
+    background-color: $yellow;
+
+    @include mont-bold-18;
+    color: $almost_black;
+
+    padding: 20px 70px;
+
+    @include breakpoint($xxs){
+      padding: 15px 50px;
+    }
+
+    &:hover {
+      background: $light_yellow;
+    }
+  }
+}

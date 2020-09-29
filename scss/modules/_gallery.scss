@@ -1,0 +1,145 @@
+.gallery {
+  position: relative;
+  background-color: $almost_black;
+
+  .header-wrapper {
+    h2 {
+      color: $almost_white;
+    }
+
+    .sub-header {
+      color: $almost_white;
+    }
+  }
+
+  .images-wrapper {
+    margin-top: 70px;
+
+    .item {
+      margin-bottom: 30px;
+
+      .image {
+        transition: 0.4s;
+      }
+
+      &:hover {
+        .scale-on-hover:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important;
+        }
+      }
+    }
+  }
+
+  .lg-backdrop {
+    position: absolute;
+    background-color: rgba($almost_black, .95);
+
+    @include breakpoint($sm) {
+      position: fixed;
+      height: 100vh;
+    }
+  }
+
+  .lg-outer {
+    position: absolute;
+    @include breakpoint($sm) {
+      position: fixed;
+      height: 100vh;
+    }
+
+    .lg-toolbar {
+      background-color: rgba($almost_black, .95);
+    }
+
+    .lg-close {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      transform: translateX(-50%);
+
+      @include breakpoint($sm) {
+        top: 100px;
+      }
+
+      &:after {
+        content: "";
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      i {
+        font-size: 26px;
+        color: $total_gray;
+      }
+    }
+
+    .lg-actions {
+      @include breakpoint($sm) {
+        position: relative;
+        height: 100%;
+      }
+      .lg-icon {
+        background: transparent;
+        color: $total_gray;
+
+        @include breakpoint($sm) {
+          position: absolute;
+          bottom: 0px;
+          top: unset;
+          height: 200px;
+        }
+
+        span {
+          display: block;
+          margin: 0 auto 20px auto;
+          width: 32px;
+          height: 32px;
+          border: 1px solid $total_gray;
+          border-radius: 50%;
+
+          i {
+            line-height: 30px;
+          }
+        }
+
+        p {
+          color: $total_gray;
+          @include mont-bold-10;
+        }
+
+        &:after, &:before {
+          content: "";
+        }
+
+        &.lg-prev {
+          i {
+            margin-left: -3px;
+          }
+        }
+
+        &.lg-next {
+          i {
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+
+    .lg-sub-html {
+      background: transparent;
+      position: absolute;
+      bottom: 40px;
+
+      color: $almost_white;
+      @include mont-bold-12;
+      letter-spacing: 0.48px;
+    }
+  }
+
+}

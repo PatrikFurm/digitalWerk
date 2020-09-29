@@ -1,0 +1,97 @@
+nav.navbar {
+  background-color: transparentize($total_gray, 1);
+  transition: background-color 300ms linear;
+
+  z-index: 1060;
+
+  &.scrolled {
+    background-color: transparentize($total_gray, 0);
+
+    @include breakpoint($sm) {
+      background-color: $almost_black;
+    }
+  }
+
+  &.collapsing-nav {
+    background-color: $almost_black;
+  }
+
+  .navbar-toggler {
+    padding: 0;
+    .menu-text {
+      padding: .30rem .80rem;
+      border-radius: 3px;
+      border: 1px solid $almost_white;
+      color: $almost_white;
+      @include mont-bold-12;
+      line-height: 20px;
+    }
+    .open-menu {
+      display: none;
+    }
+    .close-menu {
+      display: inline-block;
+      i {
+        padding-right: 10px;
+      }
+    }
+
+    &.collapsed {
+      .open-menu {
+        display: inline-block;
+      }
+      .close-menu {
+        display: none;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .navbar-nav {
+    @include breakpoint($sm) {
+      text-align: center;
+      padding: 110px 0 200px 0;
+
+      max-height: 100vh;
+    }
+  }
+
+  .navbar-collapse.show {
+    ~.navbar {
+      background-color: transparentize($total_gray, 0) !important;
+    }
+  }
+
+  .navbar-brand {
+    svg {
+      &:hover {
+        path {
+          fill: $yellow;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    @include mont-bold-14;
+    color: $almost_white;
+    letter-spacing: 0.56px;
+
+    margin: 0 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $light_yellow;
+    }
+
+    &.active {
+      color: $light_yellow;
+    }
+  }
+}

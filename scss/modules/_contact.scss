@@ -1,0 +1,78 @@
+.contact {
+  background-color: $mid_gray;
+
+  .form-wrapper {
+    margin-top: 70px;
+
+    input:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+
+    .form-group {
+      position: relative;
+
+    }
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 22px;
+
+      &.fa-check-circle {
+        color: #28a745;
+      }
+
+      &.fa-times-circle {
+        color: #f00;
+      }
+
+      opacity: 0;
+      transition-duration: 0.3s;
+
+    }
+
+    input {
+      color: black;
+      @include mont-regular-14;
+      letter-spacing: 0.28px;
+
+      @include colorPlaceHolder($mid_gray);
+    }
+
+    textarea {
+      resize: none;
+      height: calc(100% - 20px) !important;
+      color: black;
+      @include mont-regular-14;
+      letter-spacing: 0.28px;
+
+      @include colorPlaceHolder($mid_gray);
+    }
+
+    input[aria-invalid="false"], textarea[aria-invalid="false"] {
+      border: 1px solid #28a745 !important;
+      box-shadow: 0 0 4px 0 #28a745 !important;
+
+      color: #28a745;
+
+      ~ .fa-check-circle {
+        opacity: 1;
+      }
+    }
+
+    input[aria-invalid="true"], textarea[aria-invalid="true"] {
+      border: 1px solid #f00 !important;
+      box-shadow: 0 0 4px 0 #f00 !important;
+
+      color: #f00;
+
+      ~ .fa-times-circle {
+        opacity: 1;
+      }
+    }
+
+  }
+}

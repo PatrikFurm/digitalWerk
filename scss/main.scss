@@ -1,0 +1,112 @@
+// ===== Colors ======
+@import "partials/colors";
+
+// =====  Modules and Variables =====
+@import "partials/base"; //imports for all mixins + global project variables
+
+// =====  Third-party =====
+@import "vendor/breakpoint";
+@import "vendor/font";
+
+// ==== Fonts ====
+@include font-face('Merriweather', '../fonts/webfonts/Merriweather-Light', 300, normal, ttf);
+@include font-face('Merriweather', '../fonts/webfonts/Merriweather-LightItalic', 400, italic, ttf);
+
+@include font-face('Montserrat', '../fonts/webfonts/Montserrat-Bold', 700, normal, ttf);
+@include font-face('Montserrat', '../fonts/webfonts/Montserrat-Regular', 400, normal, ttf);
+
+// =====  Partials =====
+@import "partials/buttons";
+
+// =====  Modules =====
+@import "modules/nav";
+@import "modules/hero";
+@import "modules/about-us";
+@import "modules/team";
+@import "modules/gallery";
+@import "modules/contact";
+@import "modules/footer";
+
+
+
+// ===== Resposivita =====
+// @include breakpoint($xs)
+
+// ==== Style ====
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $light_gray;
+
+  section {
+    padding: 70px 0 130px 0;
+
+    @media (max-width: 575px) {
+      padding: 50px 0 90px 0;
+    }
+
+    .header-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+
+      text-align: center;
+
+      h2 {
+        @include mont-bold-36;
+        color: $almost_black;
+      }
+
+      .sub-header {
+        @include meri-light-18;
+        color: $almost_black;
+
+        @media (max-width: 575px) {
+          margin-top: 15px;
+        }
+      }
+
+    }
+  }
+
+
+
+  .slick-slide {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .slick-dots {
+    bottom: -30px;
+    button {
+      background-color: $mid_gray;
+      border-radius: 50%;
+      opacity: 0.3;
+
+      width: 12px;
+      height: 12px;
+    }
+
+    .slick-active {
+      button {
+        opacity: 1;
+
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

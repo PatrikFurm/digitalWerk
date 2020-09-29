@@ -1,0 +1,39 @@
+footer {
+  padding: 35px 0;
+  background-color: $almost_black;
+
+  .copyright {
+    @include mont-regular-14;
+    color: $total_gray;
+    span {
+      letter-spacing: 0.28px;
+    }
+  }
+
+  .company-mark {
+    text-decoration: none;
+    span {
+      color: $total_gray;
+      @include mont-bold-14;
+      letter-spacing: 0.56px;
+    }
+
+    svg {
+      path {
+        fill: $total_gray;
+      }
+    }
+
+    &:hover {
+      span {
+        color: $yellow;
+      }
+
+      svg {
+        path {
+          fill: $yellow;
+        }
+      }
+    }
+  }
+}

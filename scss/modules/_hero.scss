@@ -1,0 +1,41 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("../images/hero_background.png") no-repeat;
+  background-size: cover;
+  @include breakpoint($xxs){
+    background-position: 20% 50%;
+  }
+
+  padding: 0 !important;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.3);
+    display: none;
+    @include breakpoint($xxs){
+      display: block;
+    }
+  }
+
+  .text-wrapper {
+    h1 {
+      @include mont-bold-48;
+      color: white;
+    }
+
+    .sub-header {
+      @include mont-bold-30;
+      color: white;
+
+      margin-bottom: 120px;
+
+      @include breakpoint(max-width 495px) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
